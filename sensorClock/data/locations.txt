@@ -1,4 +1,0 @@
-Seoul,1132599
-Berlin,638242
-Los Angeles,2442047
-Paris,615702 

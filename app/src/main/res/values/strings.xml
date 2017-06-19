@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Credits & Main Info -->
+    <string name="app_name">Sensor Clock</string>
+    <string name="app_subtitle">an alrm clock for the not-yet-cognitive</string>
+    <string name="collaborator_one">Jesse Scott</string>
+    <string name="collaborator_two">Jay Cousins</string>
+    <string name="collaborator_three">Open Design City, Berlin</string>
+
+    <!-- Weather -->
+    <string name="weather_type_cloud">cloudy</string>
+    <string name="weather_type_rain">rainy</string>
+    <string name="weather_type_snow">snowy</string>
+    <string name="weather_type_sun">sunny</string>
+
+    <!-- Preferences -->
+    <string name="user_has_seen_onboarding">user_has_seen_onboarding</string>
+    <string name="song_path_sunny"></string>
+    <string name="song_path_cloudy"></string>
+    <string name="song_path_rainy"></string>
+    <string name="song_path_snowy"></string>
+
+</resources>
