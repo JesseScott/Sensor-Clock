@@ -15,6 +15,8 @@ class MainActivity: Activity() {
 
         setContentView(R.layout.activity_main)
 
+        // use https://material.uplabs.com/posts/material-weather-icon-set for icons ???
+
     }
 
 }
