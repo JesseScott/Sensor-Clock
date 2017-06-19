@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -24,6 +23,7 @@ android {
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation ('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
