@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-
-/**
- * Created by jessescott on 2017-06-19.
- */
+import android.widget.ImageButton
 
 
 class MainActivity: Activity() {
@@ -22,7 +19,27 @@ class MainActivity: Activity() {
 
         setContentView(R.layout.activity_main)
 
-        // use https://material.uplabs.com/posts/material-weather-icon-set for icons ???
+
+        val btnCloud : ImageButton = findViewById(R.id.ib_main_row_state_cloudy) as ImageButton
+        btnCloud.setOnClickListener {
+            Log.d(TAG, "CLOUD")
+        }
+
+        val btnRain : ImageButton = findViewById(R.id.ib_main_row_state_rainy) as ImageButton
+        btnRain.setOnClickListener {
+            Log.d(TAG, "RAIN")
+        }
+
+        val btnSnow : ImageButton = findViewById(R.id.ib_main_row_state_snowy) as ImageButton
+        btnSnow.setOnClickListener {
+            Log.d(TAG, "SNOW")
+        }
+
+        val btnSun : ImageButton = findViewById(R.id.ib_main_row_state_sunny) as ImageButton
+        btnSun.setOnClickListener {
+            Log.d(TAG, "SUN")
+        }
+
 
     }
 
@@ -36,8 +53,7 @@ class MainActivity: Activity() {
         when (item.itemId) {
             R.id.action_settings -> {
                 Log.d(TAG, "Settings selected")
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this.applicationContext, SettingsActivity::class.java))
                 return true
             }
             else -> return super.onOptionsItemSelected(item)

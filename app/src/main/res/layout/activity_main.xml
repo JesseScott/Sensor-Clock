@@ -52,9 +52,10 @@
                     android:gravity="center"
                     android:textStyle="bold"/>
 
-            <ImageView
-                    android:id="@+id/iv_main_row_state_cloudy"
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_cloudy"
                     android:src="@android:drawable/btn_star"
+                    android:background="@null"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:padding="12dp"
@@ -88,9 +89,10 @@
                     android:gravity="center"
                     android:textStyle="bold"/>
 
-            <ImageView
-                    android:id="@+id/iv_main_row_state_rainy"
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_rainy"
                     android:src="@android:drawable/btn_star"
+                    android:background="@null"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:padding="12dp"
@@ -124,9 +126,10 @@
                     android:gravity="center"
                     android:textStyle="bold"/>
 
-            <ImageView
-                    android:id="@+id/iv_main_row_state_snowy"
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_snowy"
                     android:src="@android:drawable/btn_star"
+                    android:background="@null"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:padding="12dp"
@@ -160,9 +163,10 @@
                     android:gravity="center"
                     android:textStyle="bold"/>
 
-            <ImageView
-                    android:id="@+id/iv_main_row_state_sunny"
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_sunny"
                     android:src="@android:drawable/btn_star"
+                    android:background="@null"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:padding="12dp"
