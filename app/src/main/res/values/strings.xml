@@ -8,6 +8,10 @@
     <string name="collaborator_three">Open Design City, Berlin</string>
     <string name="collaborator_four">https://material.uplabs.com/kevinttob</string>
 
+
+    <!-- Actions -->
+    <string name="pick_file">Pick a File</string>
+
     <!-- Weather -->
     <string name="weather_type_cloud">cloudy</string>
     <string name="weather_type_rain">rainy</string>

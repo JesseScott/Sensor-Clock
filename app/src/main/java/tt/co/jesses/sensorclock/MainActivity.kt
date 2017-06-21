@@ -7,6 +7,9 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageButton
+import tt.co.jesses.sensorclock.fragments.FileChooserDialogFragment
+
+
 
 
 class MainActivity: Activity() {
@@ -38,24 +41,33 @@ class MainActivity: Activity() {
         val btnSun : ImageButton = findViewById(R.id.ib_main_row_state_sunny) as ImageButton
         btnSun.setOnClickListener {
             Log.d(TAG, "SUN")
-            pickFile()
+            createFileChooserDialog()
         }
 
 
     }
 
 
-    fun pickFile() {
+    fun createFileChooserDialog() {
+        val dialog = FileChooserDialogFragment()
+        dialog.show(this.fragmentManager, "chooser")
+    }
+
+    fun pickLocalFile() {
         val mediaIntent = Intent(Intent.ACTION_GET_CONTENT)
         mediaIntent.type = "audio/*"
         startActivityForResult(mediaIntent, PICK_FILE)
     }
 
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (PICK_FILE == requestCode) {
-            val uri = data?.data
-            Log.d(TAG, "Picked $uri")
+            if (null != data) {
+                val uri = data.data
+                Log.d(TAG, "Picked $uri")
+            }
         }
     }
 
