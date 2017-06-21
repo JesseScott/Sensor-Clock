@@ -12,7 +12,7 @@ import android.widget.ImageButton
 class MainActivity: Activity() {
 
     private val TAG = MainActivity::class.simpleName
-
+    private val PICK_FILE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,11 +38,26 @@ class MainActivity: Activity() {
         val btnSun : ImageButton = findViewById(R.id.ib_main_row_state_sunny) as ImageButton
         btnSun.setOnClickListener {
             Log.d(TAG, "SUN")
+            pickFile()
         }
 
 
     }
 
+
+    fun pickFile() {
+        val mediaIntent = Intent(Intent.ACTION_GET_CONTENT)
+        mediaIntent.type = "audio/*"
+        startActivityForResult(mediaIntent, PICK_FILE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (PICK_FILE == requestCode) {
+            val uri = data?.data
+            Log.d(TAG, "Picked $uri")
+        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
