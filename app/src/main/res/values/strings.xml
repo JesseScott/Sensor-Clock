@@ -6,6 +6,7 @@
     <string name="collaborator_one">Jesse Scott</string>
     <string name="collaborator_two">Jay Cousins</string>
     <string name="collaborator_three">Open Design City, Berlin</string>
+    <string name="collaborator_four">https://material.uplabs.com/kevinttob</string>
 
     <!-- Weather -->
     <string name="weather_type_cloud">cloudy</string>

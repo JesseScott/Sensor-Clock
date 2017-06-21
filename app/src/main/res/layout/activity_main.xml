@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:gravity="bottom"
+            android:layout_marginBottom="@dimen/main_row_height"
             android:layout_weight="0.5">
 
         <!-- Cloudy -->
@@ -35,7 +36,7 @@
 
             <ImageView
                     android:id="@+id/iv_main_row_icon_cloudy"
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@drawable/cloud"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"/>
@@ -49,13 +50,16 @@
                     android:textAppearance="@android:style/TextAppearance.Material.Medium"
                     android:textAlignment="center"
                     android:gravity="center"
-                    />
+                    android:textStyle="bold"/>
 
             <ImageView
                     android:id="@+id/iv_main_row_state_cloudy"
                     android:src="@android:drawable/btn_star"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"/>
         </LinearLayout>
 
@@ -68,7 +72,7 @@
 
             <ImageView
                     android:id="@+id/iv_main_row_icon_rainy"
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@drawable/rain"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"/>
@@ -82,13 +86,16 @@
                     android:textAppearance="@android:style/TextAppearance.Material.Medium"
                     android:textAlignment="center"
                     android:gravity="center"
-                    />
+                    android:textStyle="bold"/>
 
             <ImageView
                     android:id="@+id/iv_main_row_state_rainy"
                     android:src="@android:drawable/btn_star"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"/>
         </LinearLayout>
 
@@ -101,7 +108,7 @@
 
             <ImageView
                     android:id="@+id/iv_main_row_icon_snowy"
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@drawable/snow"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"/>
@@ -115,13 +122,16 @@
                     android:textAppearance="@android:style/TextAppearance.Material.Medium"
                     android:textAlignment="center"
                     android:gravity="center"
-                    />
+                    android:textStyle="bold"/>
 
             <ImageView
                     android:id="@+id/iv_main_row_state_snowy"
                     android:src="@android:drawable/btn_star"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"/>
         </LinearLayout>
 
@@ -134,7 +144,7 @@
 
             <ImageView
                     android:id="@+id/iv_main_row_icon_sunny"
-                    android:src="@mipmap/ic_launcher_round"
+                    android:src="@drawable/sun"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"/>
@@ -148,13 +158,16 @@
                     android:textAppearance="@android:style/TextAppearance.Material.Medium"
                     android:textAlignment="center"
                     android:gravity="center"
-                    />
+                    android:textStyle="bold"/>
 
             <ImageView
                     android:id="@+id/iv_main_row_state_sunny"
                     android:src="@android:drawable/btn_star"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
                     android:layout_weight="0.5"/>
         </LinearLayout>
 
