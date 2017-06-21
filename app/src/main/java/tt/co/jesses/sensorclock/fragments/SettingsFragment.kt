@@ -1,9 +1,10 @@
-package tt.co.jesses.sensorclock
+package tt.co.jesses.sensorclock.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.CheckBoxPreference
 import android.preference.PreferenceFragment
+import tt.co.jesses.sensorclock.R
 
 /**
  * Created by jessescott on 2017-06-20.

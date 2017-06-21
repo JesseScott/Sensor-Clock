@@ -3,9 +3,9 @@ package tt.co.jesses.sensorclock
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Button
+import tt.co.jesses.sensorclock.helpers.PreferenceHelper
 
 /**
  * Created by jessescott on 2017-06-19.
@@ -28,11 +28,8 @@ class OnboardingActivity: Activity() {
         var onboardingButton = findViewById(R.id.btn_onboarding_button) as Button
         onboardingButton.setOnClickListener {
             Log.d(TAG, "CLICK")
-            val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-            val key = context.getString(R.string.user_has_seen_onboarding)
-            val editor = preferences.edit()
-            editor.putBoolean(key, true)
-            editor.apply()
+            val preferenceHelper = PreferenceHelper(context)
+            preferenceHelper.setPrefValueByKey(context.getString(R.string.user_has_seen_onboarding), true)
         }
     }
 

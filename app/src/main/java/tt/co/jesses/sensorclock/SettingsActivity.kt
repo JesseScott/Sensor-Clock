@@ -2,6 +2,7 @@ package tt.co.jesses.sensorclock
 
 import android.os.Bundle
 import android.preference.PreferenceActivity
+import tt.co.jesses.sensorclock.fragments.SettingsFragment
 
 /**
  * Created by jessescott on 2017-06-20.
