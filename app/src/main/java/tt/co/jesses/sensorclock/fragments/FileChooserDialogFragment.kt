@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.app.DialogFragment
 import android.os.Bundle
 import android.util.Log
+import tt.co.jesses.sensorclock.MainActivity
 import tt.co.jesses.sensorclock.R
 
 
@@ -32,7 +33,11 @@ class FileChooserDialogFragment : DialogFragment() {
             val builder = AlertDialog.Builder(activity)
             builder.setTitle(title)
                     .setItems(R.array.filetype_array, { _, which ->
-                        Log.d(TAG, "Chose $which which matches to ")
+                        Log.d(TAG, "Chose $which")
+                        when(which) {
+                            0 -> (activity as MainActivity).onLocalFileChosen()
+                            1 -> (activity as MainActivity).onRemoteFileChosen()
+                        }
                     })
                     .setNegativeButton(android.R.string.cancel, { _, _ ->
                         // User cancelled the dialog

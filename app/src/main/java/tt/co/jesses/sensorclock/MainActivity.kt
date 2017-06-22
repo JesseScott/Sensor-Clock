@@ -56,6 +56,16 @@ class MainActivity: Activity() {
         dialog.show(this.fragmentManager, "chooser")
     }
 
+    fun onLocalFileChosen() {
+        Log.d(TAG, "onLocalFileChosen")
+    }
+
+    fun onRemoteFileChosen() {
+        Log.d(TAG, "onRemoteFileChosen")
+    }
+
+
+
     fun pickLocalFile() {
         val mediaIntent = Intent(Intent.ACTION_GET_CONTENT)
         mediaIntent.type = "audio/*"
