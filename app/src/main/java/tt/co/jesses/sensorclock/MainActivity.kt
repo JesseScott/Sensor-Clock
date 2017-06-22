@@ -26,30 +26,33 @@ class MainActivity: Activity() {
         val btnCloud : ImageButton = findViewById(R.id.ib_main_row_state_cloudy) as ImageButton
         btnCloud.setOnClickListener {
             Log.d(TAG, "CLOUD")
+            createFileChooserDialog("cloudy")
         }
 
         val btnRain : ImageButton = findViewById(R.id.ib_main_row_state_rainy) as ImageButton
         btnRain.setOnClickListener {
             Log.d(TAG, "RAIN")
+            createFileChooserDialog("rainy")
         }
 
         val btnSnow : ImageButton = findViewById(R.id.ib_main_row_state_snowy) as ImageButton
         btnSnow.setOnClickListener {
             Log.d(TAG, "SNOW")
+            createFileChooserDialog("snowy")
         }
 
         val btnSun : ImageButton = findViewById(R.id.ib_main_row_state_sunny) as ImageButton
         btnSun.setOnClickListener {
             Log.d(TAG, "SUN")
-            createFileChooserDialog()
+            createFileChooserDialog("sunny")
         }
 
 
     }
 
 
-    fun createFileChooserDialog() {
-        val dialog = FileChooserDialogFragment()
+    fun createFileChooserDialog(type: String) {
+        var dialog = FileChooserDialogFragment().newInstance(type)
         dialog.show(this.fragmentManager, "chooser")
     }
 
@@ -67,6 +70,8 @@ class MainActivity: Activity() {
             if (null != data) {
                 val uri = data.data
                 Log.d(TAG, "Picked $uri")
+            } else {
+                Log.d(TAG, "Nothing was picked...")
             }
         }
     }

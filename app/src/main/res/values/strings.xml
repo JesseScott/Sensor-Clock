@@ -10,7 +10,7 @@
 
 
     <!-- Actions -->
-    <string name="pick_file">Pick a File</string>
+    <string name="pick_file">Pick a file for %1$s weather</string>
 
     <!-- Weather -->
     <string name="weather_type_cloud">cloudy</string>
