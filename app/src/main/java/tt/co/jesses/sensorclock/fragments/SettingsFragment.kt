@@ -2,7 +2,6 @@ package tt.co.jesses.sensorclock.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.preference.CheckBoxPreference
 import android.preference.PreferenceFragment
 import tt.co.jesses.sensorclock.R
 
@@ -33,10 +32,6 @@ class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPrefere
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
         val preference = findPreference(key)
-        if (null != preference && preference is CheckBoxPreference) {
-            //val preferenceHelper = PreferenceHelper(activity.applicationContext)
-            //preferenceHelper.setPrefValueByKey(key, preference.isChecked)
-        }
     }
 
 }

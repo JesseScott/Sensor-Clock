@@ -16,10 +16,23 @@ class PreferenceHelper(context: Context) {
         preferences = PreferenceManager.getDefaultSharedPreferences(mContext)
     }
 
-    fun setPrefValueByKey(key: String, value: Boolean) {
+    fun setPrefBooleanValueByKey(key: String, value: Boolean) {
+        if (value !is Boolean) {
+            return
+        }
         Log.d(TAG, "Setting $key to $value")
         val editor = preferences.edit()
         editor.putBoolean(key, value)
+        editor.apply()
+    }
+
+    fun setPrefStringValueByKey(key: String, value: String) {
+        if (value !is String) {
+            return
+        }
+        Log.d(TAG, "Setting $key to $value")
+        val editor = preferences.edit()
+        editor.putString(key, value)
         editor.apply()
     }
 

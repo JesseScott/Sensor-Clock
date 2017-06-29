@@ -29,7 +29,7 @@ class OnboardingActivity: Activity() {
         onboardingButton.setOnClickListener {
             Log.d(TAG, "CLICK")
             val preferenceHelper = PreferenceHelper(context)
-            preferenceHelper.setPrefValueByKey(context.getString(R.string.user_has_seen_onboarding), true)
+            preferenceHelper.setPrefBooleanValueByKey(context.getString(R.string.user_has_seen_onboarding), true)
         }
     }
 
