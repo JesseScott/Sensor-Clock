@@ -115,8 +115,11 @@ class MainActivity: Activity() {
     internal fun setPathForFile(data: Uri) {
         val type: String = CHOSEN_TYPE.toString()
         Log.d(TAG, "Setting path for Weather Type $type to $data")
+
+        // TODO when on type to switch string
+
         val preferenceHelper = PreferenceHelper(applicationContext)
-        preferenceHelper.setPrefStringValueByKey(applicationContext.getString(R.string.user_has_seen_onboarding), data.toString())
+        preferenceHelper.setPrefStringValueByKey(applicationContext.getString(R.string.song_path_sunny), data.toString())
 
     }
 
