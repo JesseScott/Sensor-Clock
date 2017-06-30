@@ -43,6 +43,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".SettingsActivity"
+                  android:theme="@style/AppTheme"
+                >
+            <intent-filter>
+                <action android:name="tt.co.jesses.sensorclock.SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Log
+import tt.co.jesses.sensorclock.helpers.PreferenceHelper
 
 
 class SplashActivity : Activity() {
@@ -17,11 +17,8 @@ class SplashActivity : Activity() {
         setContentView(R.layout.activity_splash)
 
         val context: Context = applicationContext
-
-        val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-        val hasOnboarded = preferences.getBoolean(context.getString(R.string.user_has_seen_onboarding), false)
-
-        //val timer: Thread
+        val preferenceHelper = PreferenceHelper(context)
+        val hasOnboarded = preferenceHelper.getPrefBooleanValueByKey(context.getString(R.string.user_has_seen_onboarding))
 
         val timer = object : Thread() {
             override fun run() {

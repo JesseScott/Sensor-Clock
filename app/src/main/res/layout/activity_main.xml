@@ -4,137 +4,194 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-
-    <!-- Cloudy -->
     <LinearLayout
-            android:id="@+id/ll_main_row_cloudy"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/main_row_height">
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
 
-        <ImageView
-                android:id="@+id/iv_main_row_icon_cloudy"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_width="0dp"
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+                android:layout_margin="10dp"
+                android:gravity="center">
 
-        <TextView
-                android:id="@+id/tv_main_row_label_cloudy"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="@string/weather_type_cloud"
-                android:layout_weight="0.5"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/tv_main_edit_alarm"
+                    android:layout_weight="1"/>
 
-        <ImageView
-                android:id="@+id/iv_main_row_state_cloudy"
-                android:src="@android:drawable/btn_star"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+            <ImageButton
+                    android:id="@+id/ib_main_edit_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:background="@null"
+                    />
+
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Rainy -->
     <LinearLayout
-            android:id="@+id/ll_main_row_rainy"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/main_row_height">
+            android:layout_height="0dp"
+            android:gravity="bottom"
+            android:layout_marginBottom="@dimen/main_row_height"
+            android:layout_weight="0.5">
 
-        <ImageView
-                android:id="@+id/iv_main_row_icon_rainy"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+        <!-- Cloudy -->
+        <LinearLayout
+                android:id="@+id/ll_main_row_cloudy"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_row_height">
 
-        <TextView
-                android:id="@+id/tv_main_row_label_rainy"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="@string/weather_type_rain"
-                android:layout_weight="0.5"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
+            <ImageView
+                    android:id="@+id/iv_main_row_icon_cloudy"
+                    android:src="@drawable/cloud"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"/>
 
-        <ImageView
-                android:id="@+id/iv_main_row_state_rainy"
-                android:src="@android:drawable/btn_star"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
-    </LinearLayout>
+            <TextView
+                    android:id="@+id/tv_main_row_label_cloudy"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/weather_type_cloud"
+                    android:layout_weight="0.5"
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
 
-    <!-- Snowy -->
-    <LinearLayout
-            android:id="@+id/ll_main_row_snowy"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/main_row_height">
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_cloudy"
+                    android:src="@android:drawable/btn_star"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"/>
+        </LinearLayout>
 
-        <ImageView
-                android:id="@+id/iv_main_row_icon_snowy"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+        <!-- Rainy -->
+        <LinearLayout
+                android:id="@+id/ll_main_row_rainy"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_row_height">
 
-        <TextView
-                android:id="@+id/tv_main_row_label_snowy"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="@string/weather_type_snow"
-                android:layout_weight="0.5"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
+            <ImageView
+                    android:id="@+id/iv_main_row_icon_rainy"
+                    android:src="@drawable/rain"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"/>
 
-        <ImageView
-                android:id="@+id/iv_main_row_state_snowy"
-                android:src="@android:drawable/btn_star"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
-    </LinearLayout>
+            <TextView
+                    android:id="@+id/tv_main_row_label_rainy"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/weather_type_rain"
+                    android:layout_weight="0.5"
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
 
-    <!-- Sunny -->
-    <LinearLayout
-            android:id="@+id/ll_main_row_sunny"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/main_row_height">
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_rainy"
+                    android:src="@android:drawable/btn_star"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"/>
+        </LinearLayout>
 
-        <ImageView
-                android:id="@+id/iv_main_row_icon_sunny"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+        <!-- Snowy -->
+        <LinearLayout
+                android:id="@+id/ll_main_row_snowy"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_row_height">
 
-        <TextView
-                android:id="@+id/tv_main_row_label_sunny"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:text="@string/weather_type_sun"
-                android:layout_weight="0.5"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textAlignment="center"
-                android:gravity="center"
-                />
+            <ImageView
+                    android:id="@+id/iv_main_row_icon_snowy"
+                    android:src="@drawable/snow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"/>
 
-        <ImageView
-                android:id="@+id/iv_main_row_state_sunny"
-                android:src="@android:drawable/btn_star"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"/>
+            <TextView
+                    android:id="@+id/tv_main_row_label_snowy"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/weather_type_snow"
+                    android:layout_weight="0.5"
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_snowy"
+                    android:src="@android:drawable/btn_star"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"/>
+        </LinearLayout>
+
+        <!-- Sunny -->
+        <LinearLayout
+                android:id="@+id/ll_main_row_sunny"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_row_height">
+
+            <ImageView
+                    android:id="@+id/iv_main_row_icon_sunny"
+                    android:src="@drawable/sun"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"/>
+
+            <TextView
+                    android:id="@+id/tv_main_row_label_sunny"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/weather_type_sun"
+                    android:layout_weight="0.5"
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+            <ImageButton
+                    android:id="@+id/ib_main_row_state_sunny"
+                    android:src="@android:drawable/btn_star"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 
