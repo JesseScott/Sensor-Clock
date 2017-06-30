@@ -3,6 +3,7 @@ package tt.co.jesses.sensorclock.helpers
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import android.text.TextUtils
 import android.util.Log
 
 
@@ -28,6 +29,9 @@ class PreferenceHelper(context: Context) {
 
     fun setPrefStringValueByKey(key: String, value: String) {
         if (value !is String) {
+            return
+        }
+        if (TextUtils.isEmpty(key) || TextUtils.isEmpty(value)) {
             return
         }
         Log.d(TAG, "Setting $key to $value")

@@ -1,6 +1,7 @@
 package tt.co.jesses.sensorclock
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -17,6 +18,7 @@ class MainActivity: Activity() {
     private val TAG = MainActivity::class.simpleName
     private val PICK_FILE = 1
 
+    private lateinit var context: Context
     private lateinit var CHOSEN_TYPE : WEATHER
 
     // region - overrides
@@ -25,6 +27,8 @@ class MainActivity: Activity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+
+        context = applicationContext
 
         val btnCloud : ImageButton = findViewById(R.id.ib_main_row_state_cloudy) as ImageButton
         btnCloud.setOnClickListener {
@@ -78,7 +82,7 @@ class MainActivity: Activity() {
         when (item.itemId) {
             R.id.action_settings -> {
                 Log.d(TAG, "Settings selected")
-                startActivity(Intent(this.applicationContext, SettingsActivity::class.java))
+                startActivity(Intent(context, SettingsActivity::class.java))
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
@@ -106,20 +110,24 @@ class MainActivity: Activity() {
     // region - internal methods
 
     internal fun createFileChooserDialog(type: String) {
-        var dialog = FileChooserDialogFragment().newInstance(type)
+        val dialog = FileChooserDialogFragment().newInstance(type)
         dialog.show(this.fragmentManager, "chooser")
     }
 
-
-
     internal fun setPathForFile(data: Uri) {
-        val type: String = CHOSEN_TYPE.toString()
-        Log.d(TAG, "Setting path for Weather Type $type to $data")
+        Log.d(TAG, "Setting path for Weather Type $CHOSEN_TYPE to $data")
 
         // TODO when on type to switch string
+        var type: String = ""
+        when(CHOSEN_TYPE) {
+            WEATHER.CLOUD -> type = context.getString(R.string.song_path_cloudy)
+            WEATHER.RAIN -> type = context.getString(R.string.song_path_rainy)
+            WEATHER.SNOW -> type = context.getString(R.string.song_path_snowy)
+            WEATHER.SUN -> type = context.getString(R.string.song_path_sunny)
+        }
 
-        val preferenceHelper = PreferenceHelper(applicationContext)
-        preferenceHelper.setPrefStringValueByKey(applicationContext.getString(R.string.song_path_sunny), data.toString())
+        val preferenceHelper = PreferenceHelper(context)
+        preferenceHelper.setPrefStringValueByKey(type, data.toString())
 
     }
 
