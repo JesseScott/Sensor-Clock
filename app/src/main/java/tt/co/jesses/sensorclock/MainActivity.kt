@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageButton
+import android.widget.TextView
 import tt.co.jesses.sensorclock.fragments.FileChooserDialogFragment
 import tt.co.jesses.sensorclock.helpers.PreferenceHelper
 
@@ -29,6 +31,16 @@ class MainActivity: Activity() {
         setContentView(R.layout.activity_main)
 
         context = applicationContext
+
+        val alarmTime: TextView = findViewById(R.id.tv_main_edit_alarm) as TextView
+        val preferenceHelper = PreferenceHelper(context)
+        var presetTime: String = preferenceHelper.getPrefStringValueByKey(context.getString(R.string.user_alarm_time))
+        if (TextUtils.isEmpty(presetTime)) {
+            presetTime = context.getString(R.string.user_alarm_time_default)
+        }
+        alarmTime.setText(presetTime)
+
+        val btnEdit: ImageButton = findViewById(R.id.ib_main_edit_alarm) as ImageButton
 
         val btnCloud : ImageButton = findViewById(R.id.ib_main_row_state_cloudy) as ImageButton
         btnCloud.setOnClickListener {
@@ -117,7 +129,6 @@ class MainActivity: Activity() {
     internal fun setPathForFile(data: Uri) {
         Log.d(TAG, "Setting path for Weather Type $CHOSEN_TYPE to $data")
 
-        // TODO when on type to switch string
         var type: String = ""
         when(CHOSEN_TYPE) {
             WEATHER.CLOUD -> type = context.getString(R.string.song_path_cloudy)

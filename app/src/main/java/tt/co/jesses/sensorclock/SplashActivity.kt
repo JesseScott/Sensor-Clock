@@ -18,7 +18,7 @@ class SplashActivity : Activity() {
 
         val context: Context = applicationContext
         val preferenceHelper = PreferenceHelper(context)
-        val hasOnboarded = preferenceHelper.getPrefValueByKey(context.getString(R.string.user_has_seen_onboarding))
+        val hasOnboarded = preferenceHelper.getPrefBooleanValueByKey(context.getString(R.string.user_has_seen_onboarding))
 
         val timer = object : Thread() {
             override fun run() {

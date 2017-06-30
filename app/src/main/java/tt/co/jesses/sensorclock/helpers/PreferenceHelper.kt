@@ -17,6 +17,8 @@ class PreferenceHelper(context: Context) {
         preferences = PreferenceManager.getDefaultSharedPreferences(mContext)
     }
 
+    // region - Boolean
+
     fun setPrefBooleanValueByKey(key: String, value: Boolean) {
         if (value !is Boolean) {
             return
@@ -26,6 +28,16 @@ class PreferenceHelper(context: Context) {
         editor.putBoolean(key, value)
         editor.apply()
     }
+
+    fun getPrefBooleanValueByKey(key: String): Boolean {
+        val value = preferences.getBoolean(key, false)
+        Log.d(TAG, "Getting preference $key with value $value")
+        return value
+    }
+
+    // endregion
+
+    // region - String
 
     fun setPrefStringValueByKey(key: String, value: String) {
         if (value !is String) {
@@ -40,10 +52,13 @@ class PreferenceHelper(context: Context) {
         editor.apply()
     }
 
-    fun getPrefValueByKey(key: String): Boolean {
-        val value = preferences.getBoolean(key, false)
+    fun getPrefStringValueByKey(key: String): String {
+        val value = preferences.getString(key, "")
         Log.d(TAG, "Getting preference $key with value $value")
         return value
     }
+
+    // endregion
+
 
 }
