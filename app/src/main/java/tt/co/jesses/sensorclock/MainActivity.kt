@@ -1,6 +1,7 @@
 package tt.co.jesses.sensorclock
 
 import android.app.Activity
+import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -12,6 +13,7 @@ import android.view.MenuItem
 import android.widget.ImageButton
 import android.widget.TextView
 import tt.co.jesses.sensorclock.fragments.FileChooserDialogFragment
+import tt.co.jesses.sensorclock.fragments.TimePickerDialogFragment
 import tt.co.jesses.sensorclock.helpers.PreferenceHelper
 
 
@@ -38,9 +40,13 @@ class MainActivity: Activity() {
         if (TextUtils.isEmpty(presetTime)) {
             presetTime = context.getString(R.string.user_alarm_time_default)
         }
-        alarmTime.setText(presetTime)
+        alarmTime.text = presetTime
 
         val btnEdit: ImageButton = findViewById(R.id.ib_main_edit_alarm) as ImageButton
+        btnEdit.setOnClickListener {
+            Log.d(TAG, "Edit Time")
+            launchTimePickerDialog();
+        }
 
         val btnCloud : ImageButton = findViewById(R.id.ib_main_row_state_cloudy) as ImageButton
         btnCloud.setOnClickListener {
@@ -124,6 +130,29 @@ class MainActivity: Activity() {
     internal fun createFileChooserDialog(type: String) {
         val dialog = FileChooserDialogFragment().newInstance(type)
         dialog.show(this.fragmentManager, "chooser")
+    }
+
+    internal fun launchTimePickerDialog() {
+
+
+//        val time = Calendar.getInstance()
+//        val hour = time.get(Calendar.HOUR_OF_DAY)
+//        val minute = time.get(Calendar.MINUTE)
+//        val mTimePicker: TimePickerDialog
+//        val mTimeSetListener = TimePickerDialog.OnTimeSetListener({ _, hourOfDay, minute -> onTimeSetListener(hourOfDay, minute) })
+//
+//        mTimePicker = TimePickerDialog(context, mTimeSetListener, hour, minute, true)
+//        mTimePicker.setTitle("Select Time")
+//        mTimePicker.show()
+
+
+        val listener = TimePickerDialog.OnTimeSetListener({ _, hourOfDay, minute -> onTimeSetListener(hourOfDay, minute) })
+        val dialog = TimePickerDialogFragment().newInstance(listener)
+        dialog.show(this.fragmentManager, "chooser")
+    }
+
+    internal fun onTimeSetListener(hour: Int, minute: Int) {
+        Log.d(TAG, "Time Set: $hour : $minute")
     }
 
     internal fun setPathForFile(data: Uri) {
